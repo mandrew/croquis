@@ -19,11 +19,11 @@ const colors = tokensToTailwind(colorTokens.items);
 const fontFamily = tokensToTailwind(fontTokens.items);
 const fontWeight = tokensToTailwind(textWeightTokens.items);
 const fontSize = tokensToTailwind(clampGenerator(textSizeTokens.items));
-const lineHeight = tokensToTailwind(textLeadingTokens.items);
+const fontLeading = tokensToTailwind(textLeadingTokens.items);
 const spacing = tokensToTailwind(clampGenerator(spacingTokens.items));
 
 module.exports = {
-  content: ['./src/**/*.{html,js,jsx,mdx,njk,twig,vue}'],
+  content: ['./src/**/*.{html,js,jsx,mdx,njk,twig,vue,json}'],
   // Add color classes to safe list so they are always generated
   safelist: [],
   presets: [],
@@ -31,12 +31,13 @@ module.exports = {
     screens: {
       sm: `${viewportTokens.min}px`,
       md: `${viewportTokens.mid}px`,
-      lg: `${viewportTokens.max}px`
+      lg: `${viewportTokens.large}px`,
+      xl: `${viewportTokens.max}px`
     },
     colors,
     spacing,
     fontSize,
-    lineHeight,
+    fontLeading,
     fontFamily,
     fontWeight,
     backgroundColor: ({theme}) => theme('colors'),
@@ -77,7 +78,7 @@ module.exports = {
   // Prevents Tailwind's core components
   blocklist: ['container'],
 
-  // Prevents Tailwind from generating that wall of empty custom properties 
+  // Prevents Tailwind from generating that wall of empty custom properties
   experimental: {
     optimizeUniversalDefaults: true
   },
@@ -93,7 +94,7 @@ module.exports = {
         {key: 'colors', prefix: 'color'},
         {key: 'spacing', prefix: 'space'},
         {key: 'fontSize', prefix: 'size'},
-        {key: 'lineHeight', prefix: 'leading'},
+        {key: 'fontLeading', prefix: 'leading'},
         {key: 'fontFamily', prefix: 'font'},
         {key: 'fontWeight', prefix: 'font'}
       ];
@@ -121,7 +122,8 @@ module.exports = {
       const customUtilities = [
         {key: 'spacing', prefix: 'flow-space', property: '--flow-space'},
         {key: 'spacing', prefix: 'region-space', property: '--region-space'},
-        {key: 'spacing', prefix: 'gutter', property: '--gutter'}
+        {key: 'spacing', prefix: 'gutter', property: '--gutter'},
+        {key: 'colors', prefix: 'indent-color', property: '--indent-color'}
       ];
 
       customUtilities.forEach(({key, prefix, property}) => {

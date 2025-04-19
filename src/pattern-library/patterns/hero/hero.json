@@ -1,0 +1,11 @@
+{
+  "title": "Hero",
+  "context": {
+    "img": {
+      "src": "/images/hero.jpg",
+      "alt": "Hero content goes here"
+    },
+    "label": "Label",
+    "href": "#"
+  }
+}

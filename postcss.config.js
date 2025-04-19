@@ -1,7 +1,8 @@
 module.exports = {
-  plugins: [
-    require('postcss-import-ext-glob'),
-    require('postcss-import'),
-    require('tailwindcss')
-  ]
+  plugins: {
+    'postcss-import-ext-glob': {},
+    'postcss-import': {},
+    'tailwindcss/nesting': 'postcss-nesting',
+    'tailwindcss': {}
+  }
 };
