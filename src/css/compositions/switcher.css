@@ -11,13 +11,13 @@ between each item
 --switcher-target-container-width (40rem): How large the container
 needs to be to allow items to sit inline with each other
 
---switcher-vertical-alignment How items should align vertically.
+--switcher-vertical-alignment (flex-start): How items should align vertically.
 Can be any acceptable flexbox alignment value.
 */
 .switcher {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--gutter, var(--space-s-l));
+  gap: var(--gutter, var(--space-l));
   align-items: var(--switcher-vertical-alignment, flex-start);
 }
 
