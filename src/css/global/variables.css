@@ -1,4 +1,6 @@
 :root {
+  @design-token-utils (custom-properties);
+
   --gutter: var(--space-m-l); /* --space-s-l */
   --transition-base: 250ms ease;
   --transition-movement: 200ms linear;

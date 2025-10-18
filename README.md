@@ -18,3 +18,10 @@ The task doesn’t currently watch for changes on the HTML document though. This
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+# Changes
+Tailwind has been removed and this template uses [postcss-design-token-utils](https://github.com/saneef/postcss-design-token-utils), a postcss implementation of [gorko](https://github.com/hankchizljaw/gorko.git)
+
+postcss-design-token-utils:
+--font-regular      change to --font-weight-regular
+@media screen(lg)   change to 
