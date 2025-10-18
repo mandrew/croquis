@@ -1,0 +1,110 @@
+/* tailwind utility classes */
+/* .max-w-\[25ch\] {
+  max-width: 25ch;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.region-space-2xl-4xl {
+  --region-space: var(--space-2xl-4xl);
+}
+
+.indent-color-primary {
+  --indent-color: #fccd26;
+}
+
+.mt-2xl-4xl {
+  margin-top: var(--space-2xl-4xl);
+} */
+
+.mb-xl {
+  margin-bottom: clamp(3.0625rem, 2.92rem + 0.69vw, 3.5rem);
+}
+
+.mt-2xl-4xl {
+  margin-top: clamp(3.5rem, 2.21rem + 6.27vw, 7.5rem);
+}
+
+.mt-xs {
+  margin-top: clamp(0.4375rem, 0.42rem + 0.10vw, 0.5rem);
+}
+
+.fixed {
+  position: fixed;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.block {
+  display: block;
+}
+
+.inline {
+  display: inline;
+}
+
+.flex {
+  display: flex;
+}
+
+.table {
+  display: table;
+}
+
+.grid {
+  display: grid;
+}
+
+.contents {
+  display: contents;
+}
+
+.hidden {
+  display: none;
+}
+
+.max-w-\[25ch\] {
+  max-width: 25ch;
+}
+
+.transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.p-\[3px\] {
+  padding: 3px;
+}
+
+.p-m {
+  padding: clamp(1.3125rem, 1.25rem + 0.29vw, 1.5rem);
+}
+
+.py-m {
+  padding-top: clamp(1.3125rem, 1.25rem + 0.29vw, 1.5rem);
+  padding-bottom: clamp(1.3125rem, 1.25rem + 0.29vw, 1.5rem);
+}
+
+.pt-2xl {
+  padding-top: clamp(3.5rem, 3.34rem + 0.78vw, 4rem);
+}
+
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+

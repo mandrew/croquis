@@ -1,0 +1,8 @@
+/* 
+INDENT UTILITY
+Add a border to the left side of a pattern or page region
+*/
+.indent {
+  border-inline-start: var(--indent-size, var(--space-xs-l)) solid
+    var(--indent-color, currentColor);
+}
