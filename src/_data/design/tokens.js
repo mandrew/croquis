@@ -1,9 +1,9 @@
-const colors = require('../../design-tokens/colors.json');
-const fonts = require('../../design-tokens/fonts.json');
-const spacing = require('../../design-tokens/spacing.json');
-const textSizes = require('../../design-tokens/text-sizes.json');
-const textLeading = require('../../design-tokens/text-leading.json');
-const textWeights = require('../../design-tokens/text-weights.json');
+const colors = require('../../design-tokens/bloom/colors.json');
+const fonts = require('../../design-tokens/bloom/fonts.json');
+const spacing = require('../../design-tokens/bloom/spacing.json');
+const textSizes = require('../../design-tokens/bloom/text-sizes.json');
+const textLeading = require('../../design-tokens/bloom/text-leading.json');
+const textWeights = require('../../design-tokens/bloom/text-weights.json');
 
 module.exports = () => {
   return {

@@ -1,4 +1,4 @@
-const viewports = require('../design-tokens/viewports.json');
+const viewports = require('../design-tokens/bloom/viewports.json');
 
 /**
  * Takes an array of tokens and sends back and array of name
