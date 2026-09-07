@@ -14,7 +14,11 @@ permalink: '{{ item.previewUrl }}/index.html'
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <link rel="stylesheet" href="/css/global.css"/>
+    {% if env.theme and env.theme != 'default' %}
+      <link rel="stylesheet" href="/css/global-{{ env.theme }}.css"/>
+    {% else %}
+      <link rel="stylesheet" href="/css/global.css"/>
+    {% endif %}
     <style>
       body {
         padding: 1rem 1rem 5rem;
