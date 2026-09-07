@@ -1,0 +1,44 @@
+.breadcrumb {
+  --gutter: 0.5em;
+
+  display: flex;
+  align-items: center;
+  font-size: var(--size-step-00);
+  font-weight: var(--font-bold);
+  gap: var(--gutter);
+}
+
+.breadcrumb p {
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.breadcrumb ul,
+.breadcrumb ol {
+  display: flex;
+  overflow-x: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.breadcrumb li {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.breadcrumb li + li {
+  /* Overrides a more specific prose style without having to write a horror selector */
+  margin: 0 !important;
+
+  &::before {
+    content: '/';
+    display: block;
+    margin-inline-end: var(--gutter);
+    margin-inline-start: var(--gutter);
+  }
+}
+
+.breadcrumb a {
+  text-underline-offset: 0.1lh;
+}

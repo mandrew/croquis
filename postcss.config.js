@@ -7,14 +7,17 @@ const postcssImportExtGlob = require("postcss-import-ext-glob");
 // const postcss = require('postcss');
 // const postcssJs = require('postcss-js');
 
+require('dotenv').config({override: true});
+var theme = process.env.THEME || 'default';
+
 //const darkColorTokens = require("./src/design-tokens/colors-dark.json");
-const colorTokens = require("./src/design-tokens/bloom/colors.json");
-const fontTokens = require('./src/design-tokens/bloom/fonts.json');
-const spacingTokens = require("./src/design-tokens/bloom/spacing.json");
-const fontLeadingTokens = require('./src/design-tokens/bloom/text-leading.json');
-const fontSizeTokens = require("./src/design-tokens/bloom/text-sizes.json");
-const fontWeightTokens = require('./src/design-tokens/bloom/text-weights.json');
-const viewportTokens = require('./src/design-tokens/bloom/viewports.json');
+const colorTokens = require(`./src/design-tokens/${theme}/colors.json`);
+const fontTokens = require(`./src/design-tokens/${theme}/fonts.json`);
+const spacingTokens = require(`./src/design-tokens/${theme}/spacing.json`);
+const fontLeadingTokens = require(`./src/design-tokens/${theme}/text-leading.json`);
+const fontSizeTokens = require(`./src/design-tokens/${theme}/text-sizes.json`);
+const fontWeightTokens = require(`./src/design-tokens/${theme}/text-weights.json`);
+const viewportTokens = require(`./src/design-tokens/${theme}/viewports.json`);
 
 const tokensToObject = require("./src/css-utils/tokens-to-object.js");
 const clampGenerator = require("./src/css-utils/clamp-generator.js");
@@ -79,7 +82,7 @@ const config = {
 			],
 		}),
 		postcssPresetEnv({
-      stage: 1
+      stage: 2
     }),
 	],
 };

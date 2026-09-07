@@ -1,10 +1,11 @@
+/* 
+  Global CSS entry point - duplicate this file with each theme and add name
+   e.g., global-theme-name.css for the "theme-name" theme.
+ */
 @import 'global/reset.css';
 @import 'global/fonts.css';
-
 @import 'global/variables.css';
-@import 'global/global-styles.css';
-
-@import-glob 'global/bloom/*.css';
+@import 'global/styles.css';
 
 @import-glob 'blocks/*.css';
 @import-glob 'compositions/*.css';

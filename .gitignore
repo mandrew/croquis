@@ -13,3 +13,13 @@ Thumbs.db
 # Node modules and output
 node_modules
 dist
+
+src/bloom
+src/logical
+src/images/theme/*
+src/design-tokens/bloom/
+src/design-tokens/logical/
+src/css/global-*
+src/css/global/logical
+src/css/global/bloom
+src/_includes/icons/theme/*

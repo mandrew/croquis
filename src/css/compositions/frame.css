@@ -1,0 +1,29 @@
+/* FRAME
+  Maintains a consistent aspect ratio for its content.
+  Related Every Layout: https://every-layout.dev/layouts/frame/
+  Usage:
+    <div class="frame">
+      <img src="example.jpg" alt="Example">
+    </div>
+  Customizable via the --n (numerator) and --d (denominator) CSS variables.
+  Example:
+    <div class="frame" style="--n: 4; --d: 3;">
+      <img src="example.jpg" alt="Example">
+    </div>
+*/
+.frame {
+  --n: 16;
+  --d: 9;
+  aspect-ratio: var(--n) / var(--d);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.frame > img,
+.frame > video {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}

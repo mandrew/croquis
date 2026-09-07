@@ -1,4 +1,4 @@
-{% extends "layouts/base.njk" %}
+{% extends "layouts/base-pattern-library.njk" %}
 
 {% set extraCSSFiles = ['pattern-library.css'] %}
 
@@ -23,7 +23,7 @@
   <div class="pattern-library wrapper">
     <header class="pattern-library__header flow">
       <a href="/pattern-library">
-        Brand name {# % include "icons/bloom/brand-full.svg" % #}
+        Brand name
       </a>
       {{ brandNav | safe }}
     </header>
@@ -69,11 +69,11 @@
             {{ summary | safe }}
           {% endif %}
           {% if toc %}
-            <nav class="pattern-library__toc" aria-label="table of contents">
+            <nav class="pattern-library__toc breadcrumb" aria-label="table of contents">
               <p>Skip to section:</p>
-              <ul>
+              <ul class="breadcrumb__list">
                 {% for item in toc %}
-                  <li>
+                  <li class="breadcrumb__list-item">
                     <a href="{{ item.slug }}">{{ item.text }}</a>
                   </li>
                 {% endfor %}
@@ -88,7 +88,4 @@
       {{ brandNav | safe }}
     </div>
   </div>
-
-  {{ design.patterns.renderPattern('closer', {navItems: []}) | safe }}
-  {{ design.patterns.renderPattern('site-foot', {}) | safe }}
 {% endblock %}

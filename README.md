@@ -1,10 +1,11 @@
-# CUBE CSS Boilerplate 
+# Croquis
+Built using the CUBE CSS Boilerplate 
 
 🚨 **PLEASE READ THIS EXPLAINER**: https://piccalil.li/blog/a-css-project-boilerplate 🚨
 
 ## Contributing
 
-This is a boilerplate that **works for us**, here at [Set Studio](https://set.studio/), so please don’t propose changes. If you do however find a bug, please raise an issue first before a pull request. Any pull request that is raised without an issue will be closed automatically.
+If you find a bug, please raise an issue first before a pull request. Any pull request that is raised without an issue will be closed automatically.
 
 Issues will also be closed automatically if they’re opinions rather than bug reports. 
 
@@ -12,30 +13,36 @@ Thank you!
 
 ## Getting started 
 
-After running `npm install` run `npm start`. This will serve up a local version of the HTML page and watch for CSS changes. 
+After running `npm install` run `npm start`. This will serve up a local version of the HTML page and watch for CSS changes.
 
-The task doesn’t currently watch for changes on the HTML document though. This is because we normally drop the CSS system into various types of projects in the studio. 
+Once npm is running and the url is accessible, visit the folder(s) under src e.g. http://localhost:8080/themeName to see the template.
+
+## Create a new pattern or variant in pattern library
+
+More information in src/pattern-library/index.md
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-# Changes
+# Changes from CUBE CSS Boilerplate
 Tailwind has been removed and this template uses [postcss-design-token-utils](https://github.com/saneef/postcss-design-token-utils), a postcss implementation of [gorko](https://github.com/hankchizljaw/gorko.git)
 
 postcss-design-token-utils:
 --font-regular      change to --font-weight-regular
-@media screen(X)   change to @media screen(--X) and add @custom-media --X (min-width: XXXpx);
+@media screen(X)    change to @media screen(--X) and add @custom-media --X (min-width: XXXpx);
 
 ## Theme
-Create new folder in the following sections and copy the files under a previous folder:
-- design-tokens/
-- css/global/
+### Add a theme variable
+In the file `.env` add the theme variable `THEME="{themename}"` e.g. THEME="default". This will also be the folder name for your theme. 
+### Create your folders
+Create new folder using your theme name `themename` in the following sections and copy the files under a previous theme folder:
+- `design-tokens/themename`
+- `_includes/icons/themename`
+- `css/global/themename`
+For a new global.css file using the theme changes, copy the file `css/global.css` and create a new file called `css/global-themename.css`
+- `css/global-themename.css`
+Remove the theme from git (if need be)
 
-All individual files folder theme, when you want to add a new folder for a new theme, make sure you update the following files with the new name:
-Images:
-- _includes/icons/{name}
-- any files inside /pattern-library that refer to the images
-Design tokens:
-- _data/design/tokens.js
-- css-utils/clamp-generator.js
-- postcss.config.js
+## Pattern library
+_data/design/*.js files are used to change the Pattern library. Update the links if you want to change to a new theme
+update extraCSSFiles if you use a new theme

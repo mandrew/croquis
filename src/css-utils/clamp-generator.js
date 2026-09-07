@@ -1,4 +1,6 @@
-const viewports = require('../design-tokens/bloom/viewports.json');
+var theme = process.env.THEME || 'default';
+
+const viewports = require(`../design-tokens/${theme}/viewports.json`);
 
 /**
  * Takes an array of tokens and sends back and array of name

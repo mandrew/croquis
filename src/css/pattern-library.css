@@ -1,5 +1,6 @@
 body:has(.pattern-library) {
   background: var(--color-light);
+  color: var(--color-dark);
 }
 
 .pattern-library {
@@ -87,46 +88,12 @@ body:has(.pattern-library) {
 .pattern-library__toc {
   --gutter: 0.5em;
 
-  display: flex;
-  align-items: center;
   border-block: var(--stroke);
   padding-block: var(--space-s);
-  font-size: var(--size-step-00);
-  font-weight: var(--font-bold);
-  gap: var(--gutter);
 }
 
 .pattern-library__toc p {
-  text-transform: uppercase;
-  flex-shrink: 0;
-}
-
-.pattern-library__toc ul {
-  display: flex;
-  overflow-x: auto;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.pattern-library__toc li {
-  display: flex;
-  flex-shrink: 0;
-}
-
-.pattern-library__toc li + li {
-  /* Overrides a more specific prose style without having to write a horror selector */
-  margin: 0 !important;
-
-  &::before {
-    content: '/';
-    display: block;
-    margin-inline-end: var(--gutter);
-  }
-}
-
-.pattern-library__toc a {
-  text-underline-offset: 0.1lh;
+  margin-top: 0;
 }
 
 .pattern-library__nav li + li {
