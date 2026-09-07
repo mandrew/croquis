@@ -1,0 +1,59 @@
+/*
+ * Single image avatar
+ */
+.avatar {
+  --avatar-size: clamp(3.5rem, 6vw, 12rem);
+  --avatar-radius: var(--avatar-size);
+
+  display: block;
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  object-fit: cover;
+  border-radius: var(--avatar-radius);
+  border: 2px solid currentColor;
+}
+
+.avatar[data-avatar-variant="pinched"] {
+  --radius-pinched: 0 1.85rem 0 1.85rem;
+
+  --avatar-radius: var(--radius-pinched);
+  width: 100%;
+  border: none;
+}
+
+.avatar--avatarless {
+  padding: 1rem;
+  overflow: initial;
+}
+
+@supports (aspect-ratio: 1/1) {
+  .avatar {
+    aspect-ratio: 1/1;
+    height: unset;
+  }
+}
+
+/* .avatar[src*="egorla.jpg"] {
+  object-position: top;
+} */
+
+/*
+ * Multiple image avatar group
+ */
+.avatar-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(1rem, max-content));
+}
+
+/* Scale the images up slightly, to create the illusion of overlap */
+
+.avatar-group .avatar {
+  transform: scale(110%);
+  transform-origin: left;
+}
+
+/* Increase the illusion by pulling each sibling image slightly left */
+
+.avatar-group img + img {
+  margin-inline-start: -7%;
+}

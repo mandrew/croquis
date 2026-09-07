@@ -1,0 +1,61 @@
+:root {
+  --color-code-text: var(--color-dark);
+  --color-code-background: var(--color-mid);
+  --color-code-border: var(--color-dark-glare);
+}
+
+
+.pattern-library .bg-dark {
+  color: var(--color-light);
+}
+
+code,
+kbd,
+samp {
+  border-radius: var(--radius-xs);
+  font-family: var(--font-mono);
+  padding: 0.2em 0.2em 0.05em 0.2em;
+  hyphens: none;
+  tab-size: 2;
+  text-align: left;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+p code {
+  color: var(--color-code-text);
+}
+
+/* code */
+pre,
+p code,
+div > code,
+li > code,
+dd > code,
+td > code:not(:only-child) {
+  background: var(--color-code-background);
+  border: 1px solid var(--color-code-border);
+}
+
+
+pre[class*="language-"],
+code[class*="language-"] {
+  padding: 1em;
+  margin: .5em 0;
+  color: var(--prism-text);
+  /* Remove 13px font-size set in theme */
+  font-size: inherit;
+}
+
+pre[class*="language-"] {
+  background: var(--prism-block-background);
+}
+
+/* code text */
+.text-primary-shade {
+  background: none;
+  border: none;
+}
