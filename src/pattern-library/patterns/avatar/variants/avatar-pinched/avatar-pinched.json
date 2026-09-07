@@ -1,0 +1,9 @@
+
+{ 
+  "title": "Pinched",
+  "context": {
+    "src": "/images/person.jpg",
+    "alt": "Person",
+    "variant": "pinched"
+  }
+}

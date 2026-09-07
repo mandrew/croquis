@@ -1,0 +1,21 @@
+
+{ 
+  "title": "Avatar/",
+  "context": {
+    "label": "Label title goes here",
+    "items": [
+      {
+        "src": "/images/person.jpg",
+        "alt": "Person"
+      },
+      {
+        "src": "/images/person.jpg",
+        "alt": "Person"
+      },
+      {
+        "src": "/images/person.jpg",
+        "alt": "Person"
+      }
+    ]
+  }
+}

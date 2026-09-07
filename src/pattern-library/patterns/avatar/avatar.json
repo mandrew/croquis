@@ -1,0 +1,9 @@
+
+{ 
+  "title": "Avatar",
+  "context": {
+    "src": "/images/person.jpg",
+    "alt": "Person",
+    "variant": ""
+  }
+}

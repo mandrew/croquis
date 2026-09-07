@@ -1,0 +1,5 @@
+<div class="avatar-group" role="img" aria-label="{{ data.label }}">
+  {% for item in data.items %}
+    <img loading="lazy" draggable="false" class="avatar" src="{{ item.src }}" alt="{{ item.alt }}" />
+  {% endfor %}
+</div>
