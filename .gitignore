@@ -17,8 +17,8 @@ dist
 src/bloom
 src/logical
 src/images/theme/*
-src/design-tokens/bloom/
-src/design-tokens/logical/
+src/design-tokens/bloom-theme
+src/design-tokens/logical
 src/css/global-*
 src/css/global/logical
 src/css/global/bloom
