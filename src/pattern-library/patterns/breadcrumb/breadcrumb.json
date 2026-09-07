@@ -1,0 +1,20 @@
+{ 
+  "title": "Breadcrumb",
+  "context": {
+    "ariaLabel": "Breadcrumb",
+    "items": [
+      {
+        "href": "/",
+        "label": "Home"
+      },
+      {
+        "href": "/courses",
+        "label": "Courses"
+      },
+      {
+        "href": "/courses/barista-essentials",
+        "label": "Barista Essentials"
+      }
+    ]
+  }
+}

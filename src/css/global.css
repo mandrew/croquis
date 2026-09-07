@@ -7,6 +7,8 @@
 @import 'global/variables.css';
 @import 'global/styles.css';
 
+@import 'global/default/styles.css';
+
 @import-glob 'blocks/*.css';
 @import-glob 'compositions/*.css';
 @import-glob 'utilities/*.css';

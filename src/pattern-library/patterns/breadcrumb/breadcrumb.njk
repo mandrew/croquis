@@ -1,0 +1,9 @@
+<nav class="breadcrumb" aria-label="{{data.ariaLabel}}" >
+  <ol class="breadcrumb__list">
+    {% for item in data.items %}
+    <li class="breadcrumb__list-item">
+      <a href="{{item.href}}" {% if item["aria-current"] == "true" %}aria-current="page"{% endif %}>{{item.label}}</a>
+    </li>
+    {% endfor %}
+  </ol>
+</nav>
