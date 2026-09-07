@@ -4,7 +4,7 @@
   "scripts": {
     "css": "npx postcss src/css/*.css src/css/global/*/pattern-library.css --base src/css --dir dist/css",
     "clean": "rm -r -f dist && mkdir dist",
-    "start": "concurrently \"eleventy --serve --quiet\" \"npm run css -- --watch\"",
+    "start": "node scripts/start.js",
     "build": "npm run clean && eleventy && NODE_ENV=production npm run css",
     "patterns:create": "node src/lib/code-sample-generator.js -b 'patterns'"
   },
