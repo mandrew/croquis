@@ -4,10 +4,6 @@
   --gutter: var(--space-s) var(--space-l);
 }
 
-.listing-item h2 {
-  margin-block-start: 0;
-}
-
 /* Adds plenty of space between items */
 
 .listing-item {

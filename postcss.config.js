@@ -78,7 +78,9 @@ const config = {
         { id: "space", prefix: "region-space", property: "--region-space"},
         { id: "space", prefix: "gutter", property: "--gutter"},
         { id: "color", prefix: "indent-color", property: "--indent-color"},
-				{ id: "space", prefix: "padding", property: "padding"},
+				{ id: "space", prefix: "py", property: "padding-block" },
+				{ id: "space", prefix: "px", property: "padding-inline" },
+				{ id: "space", prefix: "mt", property: "margin-top"},
 			],
 		}),
 		postcssPresetEnv({

@@ -1,0 +1,8 @@
+<div class="brand">
+  {% include "assets/logo.svg" %}
+  {% if data.supportingText %}
+    <p class="brand__supporting-text mt-zero">
+      {{ data.supportingText }}
+    </p>
+  {% endif %}
+</div>

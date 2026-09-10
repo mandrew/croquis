@@ -19,21 +19,7 @@
   margin-top: var(--space-2xl-4xl);
 } */
 
-.mt-0 {
-  margin-top: 0;
-}
 
-.mb-xl {
-  margin-bottom: clamp(3.0625rem, 2.92rem + 0.69vw, 3.5rem);
-}
-
-.mt-2xl-4xl {
-  margin-top: clamp(3.5rem, 2.21rem + 6.27vw, 7.5rem);
-}
-
-.mt-xs {
-  margin-top: clamp(0.4375rem, 0.42rem + 0.10vw, 0.5rem);
-}
 
 .fixed {
   position: fixed;
