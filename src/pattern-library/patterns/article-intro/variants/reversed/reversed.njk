@@ -1,0 +1,13 @@
+<section class="listing-item sidebar" data-reversed data-direction="rtl">
+  <div class="listing-item__content flow">
+    <header class="listing-item__header">
+      <h2 class="listing-item__heading"><a href="#">{{ data.title }}</a></h2>
+      <p>Posted on <time datetime="datetime">{{ data.dateDayOfWeek }}, {{ data.dateDay }} {{ data.dateMonth }} {{ data.dateYear }}</time> by {{ data.firstName }} {{ data.lastName }}</p>
+    </header>
+    <p>{{ data.intro }}</p>
+    <p>{{ data.summary }}</p>
+  </div>
+  <div class="listing-item__indent">
+    <img src="{{ data.src }}" class="avatar" data-avatar-variant="{{ data.variant }}" alt="{{ data.alt }}">
+  </div>
+</section>

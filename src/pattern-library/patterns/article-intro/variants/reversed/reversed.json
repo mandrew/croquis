@@ -1,0 +1,17 @@
+{ 
+  "title": "Reversed",
+  "context": {
+    "src": "/images/person.jpg",
+    "alt": "Person",
+    "variant": "pinched",
+    "title": "Reversed",
+    "dateDayOfWeek": "Monday",
+    "dateDay": "01",
+    "dateMonth": "January",
+    "dateYear": "2024",
+    "firstName": "John",
+    "lastName": "Doe",
+    "summary": "This is a brief summary of the article.",
+    "intro": "This is the introduction to the article."
+  }
+}
