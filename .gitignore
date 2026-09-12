@@ -24,3 +24,4 @@ src/css/global-*
 src/css/global/logical
 src/css/global/bloom
 src/_includes/icons/theme/*
+src/pattern-library/patterns/**/variants/*-bloom/

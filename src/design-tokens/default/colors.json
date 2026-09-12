@@ -19,6 +19,10 @@
       "value": "#ffffff"
     },
     {
+      "name": "Extra Light",
+      "value": "#e0e0e0"
+    },
+    {
       "name": "Primary",
       "value": "#ccc"
     }

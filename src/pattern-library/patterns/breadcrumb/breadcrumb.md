@@ -1,0 +1,1 @@
+Uses [ARIA Authoring Practices Guide (APG) Breadcrumb pattern](https://www.w3.org/WAI/ARIA/apg/patterns/breadcrumb/examples/breadcrumb/) as an example.

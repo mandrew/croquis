@@ -2,61 +2,62 @@
 Button
 */
 
+button,
 .button {
   --button-bg: var(--color-primary);
   --button-text: var(--color-dark);
-  --button-x-padding: 2em;
-  --button-y-padding: 1.1em;
+  --button-x-padding: 0.725rem; /* horizontal padding */
+  --button-y-padding: 0.525rem; /* vertical padding */
   --button-gutter: 0.5ch;
   --focus-color: var(--color-primary);
+  --button-radius: none;
+  --button-border: none;
 
   display: inline-flex;
   gap: var(--button-gutter);
+  min-width: var(--button-min-width, 8rem); /* Ensures small labels still have a substantial click target */
   align-items: center;
-  line-height: var(--leading-flat);
-  position: relative;
-  border: none;
+  justify-content: center;
+  line-height: var(--button-line-height, 1.5);
+  border: var(--button-border, none);
   cursor: pointer;
+  user-select: none;
   background: var(--button-bg);
   color: var(--button-text);
   padding: var(--button-y-padding) var(--button-x-padding);
-  text-transform: uppercase;
   letter-spacing: var(--uppercase-kerning);
   text-decoration: none;
-  font-size: var(--size-step-00);
-  font-weight: var(--font-weight-bold);
+  font-size: var(--button-font-size, 1rem);
+  font-weight: var(--button-font-weight, 500);
+  border-radius: var(--button-radius, none);
+}
+button:hover,
+button:focus,
+.button:hover,
+.button:focus {
+  --button-bg: var(--color-primary);
 }
 
-/* .corner */
-.button:has(.corner) {
-  padding-inline-end: calc(var(--button-x-padding) * 2);
+.button[data-button-variant='transition'] {
+  --button-transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: var(--button-transition);
 }
 
-.button .corner {
-  --corner-size: 100%;
-
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
-/* interactivity */
-.button:hover {
-  filter: brightness(105%);
-}
-
-.button:hover .corner {
-  --corner-offset: 60%;
-}
-
+/* Active State (While clicked) */
+button:active,
 .button:active {
-  transform: scale(99%);
+  --button-transform: scale(0.98); /* Subtle "press" effect */
+  transform: var(--button-transform, none); 
 }
 
-/* Variant exceptions */
-.button[data-button-variant='secondary'] {
-  --button-bg: var(--color-dark-glare);
-  --button-text: var(--color-primary);
-  --focus-color: var(--color-dark);
-  --corner-secondary-color: var(--color-primary);
+/* Disabled State */
+button:disabled,
+button:disabled:hover,
+button:disabled:focus {
+  --button-bg: var(--color-extra-light, none);
+  --button-text: var(--color-mid, none);
+  --button-border: var(--color-extra-light, none);
+
+  cursor: not-allowed;
+  transform: none;
 }
