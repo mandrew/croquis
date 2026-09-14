@@ -1,0 +1,13 @@
+<div class="wrapper flow">
+  {% if data.navItems.length %}
+    <nav aria-label="{{ data.navLabel }}" class="nav">
+      <ul class="cluster" role="list">
+        {% for item in data.navItems %}
+          <li>
+            <a href="{{ item.href }}" {% if item.current %}aria-current="page"{% endif %}>{{ item.label }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  {% endif %}
+</div>

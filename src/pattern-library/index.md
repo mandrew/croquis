@@ -60,7 +60,7 @@ src/
 Let's you want to create a variant of "my-pattern":
 
 ```bash
-npm run patterns:create -- -p my-pattern/variants -n my-pattern-primary -t Primary
+npm run patterns:create -- -p my-pattern/variants -n my-pattern-primary -t Primary\ pattern
 ```
 
 It'll result in this structure:
