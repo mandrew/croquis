@@ -46,3 +46,10 @@ Remove the theme from git (if need be)
 ## Pattern library
 _data/design/*.js files are used to change the Pattern library. Update the links if you want to change to a new theme
 update extraCSSFiles if you use a new theme
+
+## Resources
+https://cube.fyi/
+https://every-layout.dev/
+https://portfolio.set.studio/design-system/
+https://inclusive-components.design/
+https://design-system.service.gov.uk/

@@ -1,72 +1,107 @@
 /*
-Card
+Card component
+
+Note: use https://inclusive-components.design/cards/ for possible accessibility considerations
 */
 .card {
   --focus-color: var(--color-primary);
+  --card-bg: var(--color-light);
+  --card-border: none;
+  --card-radius: none;
+  --card-x-padding: var(--space-l); /* horizontal padding */
+  --card-y-padding: var(--space-l); /* vertical padding */
 
-  border: var(--stroke);
-  border-radius: var(--radius-l);
-  padding: var(--space-l);
+  border: var(--card-border);
+  border-radius: var(--card-radius);
+  display: flex;
+  flex-direction: column;
   position: relative;
-}
-
-.card__heading {
-  font-size: var(--size-step-00);
-  text-transform: uppercase;
-  letter-spacing: var(--uppercase-kerning);
-  color: var(--color-light);
-}
-
-.card__meta {
-  --flow-space: var(--space-s);
-
-  font-size: var(--size-step-2);
-  line-height: var(--leading-flat);
+  background: var(--card-bg);
 }
 
 .card__content {
-  margin-block-start: var(--space-l);
+  padding: var(--card-y-padding) var(--card-x-padding);
 }
 
-/* Alert */
-.card__alert {
-  /* This element is in a flow context so we need to remove the inherited margin */
-  --flow-space: 0;
+.card__content > * {
+  margin-block: 0;
+}
 
-  display: grid;
-  place-items: center;
-  width: 10em;
-  height: 10em;
-  background: var(--color-light);
-  color: var(--color-dark);
-  text-transform: uppercase;
-  letter-spacing: var(--uppercase-kerning);
-  font-size: var(--size-step-000);
-  font-weight: bold;
+/* Ensure consistent heading size regardless of heading level */
+.card :is(h2, h3, h4) {
+  font-size: var(--size-step-2);
+}
+
+/* Ensure consistent text size for all non-heading elements */
+.card > :not(h2, h3, h4) {
+  font-size: var(--size-step-1);
+}
+
+/*
+  Use Heydon’s pseudo-content trick to make the whole card clickable
+  @link: https://inclusive-components.design/cards/#thepseudocontenttrick
+  See also Andy’s Breakout button
+  @link: https://piccalil.li/tutorial/create-a-semantic-break-out-button-to-make-an-entire-element-clickable/
+*/
+.card :is(h2, h3, h4) > a::after {
+  content: '';
   position: absolute;
-  clip-path: polygon(0 0, 100% 0, 100% 100%);
-  z-index: 1;
-
-  top: calc(var(--stroke-width, 1px) * -1);
-  right: calc(var(--stroke-width, 1px) * -1);
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
 }
 
-.card__alert > span {
-  transform: rotate(45deg) translateY(-1lh);
-  line-height: var(--leading-flat);
-}
-
-.card img {
-  aspect-ratio: 1/1;
-  object-fit: cover;
-  border-radius: var(--radius-m);
-}
-
+/* Raise all other links above the pseudo-content, so they remain clickable */
+.card p,
+.card button,
 .card .button {
-  --flow-space: var(--space-l);
+  position: relative;
+  z-index: 1;
 }
 
-.card:has([href]:hover) {
-  background: rgb(from var(--color-light) r g b / 5%);
-  transition: background var(--transition-fade);
+/* Apply a basic focus style to the link so that users of older browsers that do not support :focus-within will still see a fallback focus style */
+.card a:focus {
+  text-decoration: underline;
+  outline: none;
+}
+
+/* Use :focus-within to match the :hover style */
+.card:focus-within {
+  outline-color: var(--focus-ring-color,currentColor);
+  outline-offset: var(--focus-ring-offset, 2px);
+  outline-style: var(--focus-ring-style, solid);
+  outline-width: var(--focus-ring-width, 2px);
+}
+
+/* Remove the unnecessary basic :focus style only where :focus-within is supported */
+.card:focus-within a:focus {
+  text-decoration: none;
+}
+
+/* Force the textual elements to take up all the available space and prevents line length for cards on large screens not supporting grid from becoming too long */
+.card > div {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  max-width: 60ch;
+}
+
+/* Optionally flip the card design
+ @link: https://cube.fyi/exception.html
+*/
+.card[data-card-variant='reversed'] {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.card .frame.padded {
+  padding: 0 var(--card-y-padding);
+  padding-block-start: 0;
+  padding-block-end: var(--card-y-padding);
+}
+
+.card[data-card-variant='reversed'] .frame.padded {
+  padding-block-end: 0;
+  padding-block-start: var(--card-y-padding);
 }

@@ -6,8 +6,8 @@ button,
 .button {
   --button-bg: var(--color-primary);
   --button-text: var(--color-dark);
-  --button-x-padding: 0.725rem; /* horizontal padding */
-  --button-y-padding: 0.525rem; /* vertical padding */
+  --button-x-padding: var(--space-xs); /* horizontal padding */
+  --button-y-padding: var(--space-2xs); /* vertical padding */
   --button-gutter: 0.5ch;
   --focus-color: var(--color-primary);
   --button-radius: none;

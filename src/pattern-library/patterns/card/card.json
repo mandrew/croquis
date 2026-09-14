@@ -2,20 +2,65 @@
   "title": "Card",
   "extraSampleCSS": ".card { max-width: 380px }",
   "context": {
-    "img": {
-      "src": "/images/card-image.jpg",
-      "alt": "An over-head shot of someone making a latte with frothed milk from a jug"
-    },
-    "heading": "Barista essentials",
-    "meta": "Sep 29. London, UK.",
-    "buttonLabel": "Find out more",
-    "href": "#"
+    "heading": "Coffee essentials",
+    "meta": "Sep 29. Wellington, NZ."
   },
   "variants": [
     {
-      "name": "With alert text",
+      "name": "Image",
       "context": {
-        "alertText": "Last few spots"
+        "img": {
+          "src": "/images/person-coffee.jpg",
+          "alt": "An over-head shot of someone holding a coffee with frothed milk from a jug"
+        },
+        "heading": "Coffee essentials",
+        "meta": "Sep 29. Wellington, NZ."
+      }
+    },
+    {
+      "name": "Image reversed",
+      "context": {
+        "variant": "reversed",
+        "img": {
+          "src": "/images/person-coffee.jpg",
+          "alt": "An over-head shot of someone holding a coffee with frothed milk from a jug"
+        },
+        "heading": "Coffee essentials",
+        "meta": "Sep 29. Wellington, NZ."
+      }
+    },
+    {
+      "name": "Image padded",
+      "context": {
+        "img": {
+          "src": "/images/person-coffee.jpg",
+          "alt": "An over-head shot of someone holding a coffee with frothed milk from a jug",
+          "class": "padded"
+        },
+        "heading": "Coffee essentials",
+        "meta": "Sep 29. Wellington, NZ."
+      }
+    },
+    {
+      "name": "Image padded and reversed",
+      "context": {
+        "variant": "reversed",
+        "img": {
+          "src": "/images/person-coffee.jpg",
+          "alt": "An over-head shot of someone holding a coffee with frothed milk from a jug",
+          "class": "padded"
+        },
+        "heading": "Coffee essentials",
+        "meta": "Sep 29. Wellington, NZ."
+      }
+    },
+    {
+      "name": "Button",
+      "context": {
+        "heading": "Coffee essentials",
+        "meta": "Sep 29. Wellington, NZ.",
+        "buttonLabel": "Find out more",
+        "href": "#"
       }
     }
   ]
