@@ -84,7 +84,10 @@ const config = {
 			],
 		}),
 		postcssPresetEnv({
-      stage: 2
+      stage: 2,
+			features: {
+				'logical-properties-and-values': false
+			}
     }),
 	],
 };
