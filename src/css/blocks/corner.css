@@ -1,42 +1,148 @@
 /*
 Corner
+
+Considerations:
+- The corner element relies on CSS variables for size, color, and offset.
+- The triangle can be docked to the top-right of the parent.
+- Themes can be applied to change the primary and secondary colors.
+- Interactive corners can change their offset on hover or focus.
+- Text can be added inside the corner with optional styling.
+- Animations can be applied to the corner triangles.
 */
+
 .corner {
-  display: block;
   position: relative;
-  aspect-ratio: 1/1;
+  display: block;
+}
+
+.corner,
+[data-corner-plain-docked]::before {
+  aspect-ratio: 1 / 1;
   height: var(--corner-size, 100px);
 }
 
 .corner::before,
-.corner::after {
+.corner::after,
+[data-corner-plain-docked]::before {
   content: '';
   display: block;
+}
+
+.corner::before,
+.corner::after {
   position: absolute;
   inset: 0;
-  transition: clip-path var(--transition-bounce);
+  transition: clip-path var(--corner-transition, var(--transition-bounce));
+  /* TODO: Consider adding pointer-events: none; */
+}
+
+/* Default triangle setup */
+.corner:not([data-corner-theme])::before,
+[data-corner-plain-docked]::before {
+  background: var(--corner-primary-color, var(--color-light));
+  clip-path: polygon(0 0, 100% 0, 100% 100%);
+}
+
+/* The second clip is enabled by a theme */
+.corner:not([data-corner-theme])::after {
+  display: none;
 }
 
 /* The large clip path */
-.corner::before {
+.corner[data-corner-theme]::before {
   background: var(--corner-primary-color, var(--color-light));
   clip-path: polygon(100% 0, var(--corner-offset, 30%) 0, 100% 100%);
 }
 
 /* The small clip path */
-.corner::after {
+.corner[data-corner-theme]::after {
   background: var(--corner-secondary-color, var(--color-dark));
-  clip-path: polygon(var(--corner-offset, 30%) 0, 0 0, 100% 100%);
+  clip-path: polygon(
+    var(--corner-offset, 30%) 0,
+    0 0,
+    100% 100%
+  );
 }
 
-/* dock the corner to the top right of the parent */
-.corner[data-corner-docked] {
+/* Dock the corner to the top-right of the parent */
+.corner[data-corner-docked],
+[data-corner-plain-docked]::before {
   position: absolute;
-  top: 0;
-  right: 0;
+  inset-block-start: calc(var(--stroke-width, 1px) * -1);
+  inset-inline-end: calc(var(--stroke-width, 1px) * -1);
 }
 
-/* theme */
+/* Plain colored corners */
+.corner[data-corner-dark] {
+  --corner-primary-color: var(--color-dark);
+  --corner-secondary-color: var(--color-light);
+}
+
+/* Themed corners, used with animations */
 .corner[data-corner-theme='primary'] {
+  --corner-primary-color: var(--color-light);
   --corner-secondary-color: var(--color-primary);
+}
+
+.corner[data-corner-theme='secondary'] {
+  --corner-primary-color: var(--color-light);
+  --corner-secondary-color: var(--color-dark);
+}
+
+/* Optional interaction */
+.corner[data-corner-interactive]:hover,
+.corner[data-corner-interactive]:focus-within {
+  --corner-offset: 60%;
+}
+
+/* Optional text */
+.corner[data-corner-text] {
+  align-items: center;
+  background: var(--corner-text-background, var(--color-light));
+  color: var(--corner-text-color, var(--color-dark));
+  display: grid;
+  font-size: var(--corner-text-size, var(--size-step-000));
+  font-weight: var(--corner-text-weight, var(--font-weight-bold));
+  height: 10em;
+  justify-items: center;
+  letter-spacing: var(--uppercase-kerning);
+  line-height: var(--leading-flat);
+  padding: var(--corner-text-padding, var(--space-xs));
+  /* position: absolute; */
+  text-align: center;
+  text-transform: uppercase;
+  width: 10em;
+  z-index: 1;
+  clip-path: polygon(0 0, 100% 0, 100% 100%);
+  /* inset-block-start: calc(var(--stroke-width, 1px) * -1);
+  inset-inline-end: calc(var(--stroke-width, 1px) * -1); */
+}
+
+.corner[data-corner-text] > span {
+  line-height: var(--leading-flat);
+  transform: rotate(45deg) translateY(-1lh);
+}
+
+/* Optional animation */
+.corner[data-corner-animation='bounce']::before,
+.corner[data-corner-animation='bounce']::after {
+  animation: corner-bounce 2s ease-in-out infinite alternate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .corner::before,
+  .corner::after {
+    animation: none;
+    transition: none;
+  }
+}
+
+@keyframes corner-bounce {
+  from {
+    clip-path: polygon(100% 0, 30% 0, 100% 100%);
+  }
+
+  to {
+    clip-path: polygon(100% 0, 60% 0, 100% 100%);
+  }
 }

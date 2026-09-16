@@ -1,5 +1,23 @@
 {
   "title": "Corner",
-  "extraSampleCSS": "body { background: var(--color-dark-glare) }",
-  "context": {}
+  "extraSampleCSS": "body { background: var(--color-mid) }",
+  "context": {
+  },
+  "variants": [
+    {
+      "name": "dark-color",
+      "label": "Dark colour",
+      "context": {
+        "attribute": "data-corner-dark"
+      }
+    },
+    {
+      "name": "corner-text",
+      "label": "Corner with Text",
+      "context": {
+        "attribute": "data-corner-text",
+        "text": "Sample text goes here"
+      }
+    }
+  ]
 }

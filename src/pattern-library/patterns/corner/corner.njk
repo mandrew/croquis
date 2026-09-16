@@ -1,1 +1,9 @@
-<span class="corner" aria-hidden="true"></span>
+<div
+  class="corner"
+  {% if data.attribute %}{{ data.attribute }}{% endif %}
+  {% if data.colour %} data-corner-color={{ data.colour }}{% endif %}
+    aria-hidden="true"
+  {% if data.style %} style="{{ data.style }}"{% endif %}
+>
+  {% if data.text %}<span>{{ data.text }}</span>{% endif %}
+</div>

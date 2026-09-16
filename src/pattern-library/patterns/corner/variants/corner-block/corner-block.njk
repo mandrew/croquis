@@ -1,0 +1,15 @@
+<style>
+  body { background: var(--color-mid) }
+  .my-element {
+    --corner-primary-color: var(--color-mid); /* should be same as body */
+    --corner-size: clamp(2rem, 10vw, 7.5rem);
+    --corner-offset: 50%;
+
+    max-width: 200vh;
+    height: 70vh;
+    background-color: var(--color-light);
+    position: relative;
+  }
+</style>
+
+<div class="my-element" data-corner-plain-docked></div>

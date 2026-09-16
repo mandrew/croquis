@@ -16,19 +16,14 @@ Rolodex
   color: var(--rolodex-text);
   text-decoration: none;
   position: relative;
+  overflow: hidden; /* Ensure the corner triangle does not overflow the rolodex item */
 }
 
-.rolodex__item::before {
-  content: '';
-  width: clamp(2rem, 10vi, 7.5rem);
-  aspect-ratio: 1/1;
-  position: absolute;
+.rolodex__item[data-corner-plain-docked]::before {
+  --corner-primary-color: var(--rolodex-clip);
+  --corner-size: clamp(2rem, 10vi, 7.5rem);
+
   pointer-events: none;
-  clip-path: polygon(0 0, 100% 0, 100% 100%);
-  background: var(--rolodex-clip);
-  position: absolute;
-  top: 0;
-  right: 0;
 }
 
 .rolodex__item:hover {
