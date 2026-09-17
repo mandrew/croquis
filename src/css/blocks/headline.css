@@ -5,12 +5,12 @@ Headline
     --repel-vertical-alignment: baseline;
     --gutter: var(--space-s);
 
-    padding-block-end: var(--space-2xl);
-    border-block-end: var(--stroke);
+    padding-block-end: var(--headline-padding-end);
+    border-block-end: var(--headline-border);
   }
 
-  .headline__heading {
-    font-size: var(--size-step-10);
-    line-height: var(--leading-flat);
-    font-weight: var(--font-weight-black);
+  .headline :is(h2, h3, h4) {
+    font-size: var(--headline-font-size);
+    line-height: var(--headline-line-height);
+    font-weight: var(--headline-font-weight);
   }

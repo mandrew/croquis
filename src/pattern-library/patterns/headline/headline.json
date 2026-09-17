@@ -1,10 +1,27 @@
 {
   "title": "Headline",
   "context": {
-    "heading": "Tasting notes.",
-    "labelledIcon": {
-      "utilities": "text-light text-step-2",
-      "text": "Latest articles"
+    "heading": {
+      "isHeader": false,
+      "text": "Heading text",
+      "utilities": "mt-zero"
     }
-  }
+  },
+  "variants": [
+    {
+      "name": "Heading with right text",
+      "utilities": "repel",
+      "context": {
+        "heading": {
+          "isHeader": false,
+          "text": "Heading text",
+          "utilities": "mt-zero"
+        },
+        "labelledIcon": {
+          "utilities": "text-light",
+          "text": "Scroll for more"
+        }
+      }
+    }
+  ]
 }
