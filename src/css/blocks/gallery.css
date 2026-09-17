@@ -4,6 +4,8 @@ Gallery
 .gallery {
   --grid-placement: auto-fit;
   --flow-space: var(--space-m);
+  --image-aspect-ratio: 1;
+  --image-radius: var(--radius-m);
 }
 
 .gallery p {
@@ -11,14 +13,27 @@ Gallery
 }
 
 .gallery img {
-  aspect-ratio: 1/1;
+  display: block;
+  width: 100%;
+  aspect-ratio: var(--image-aspect-ratio);
   object-fit: cover;
-  border-radius: var(--radius-m);
+  border-radius: var(--image-radius);
 }
 
-.gallery__byline {
-  font-size: var(--size-step-00);
-  font-weight: var(--font-weight-bold);
-  text-transform: uppercase;
-  letter-spacing: var(--uppercase-kerning);
+/* Editorial theme */
+.gallery[data-theme-editorial] > :nth-child(1) {
+  grid-column: span 2;
+}
+
+.gallery[data-theme-editorial] > :nth-child(2) {
+  align-self: end;
+}
+
+.gallery[data-theme-editorial] > :nth-child(3) {
+  grid-column: span 2;
+  align-self: start;
+}
+
+.gallery[data-theme-editorial] > :nth-child(4) {
+  align-self: center;
 }
