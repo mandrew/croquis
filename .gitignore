@@ -16,6 +16,7 @@ dist
 
 src/bloom
 src/logical
+src/fonts/theme/*
 src/images/theme/*
 src/design-tokens/*
 !src/design-tokens/default/

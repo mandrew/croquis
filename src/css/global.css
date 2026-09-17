@@ -3,7 +3,7 @@
    e.g., global-theme-name.css for the "theme-name" theme.
  */
 @import 'global/reset.css';
-@import 'global/fonts.css';
+/* @import global fonts css here if needed */
 @import 'global/variables.css';
 @import 'global/styles.css';
 
