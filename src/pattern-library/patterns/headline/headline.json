@@ -10,8 +10,8 @@
   "variants": [
     {
       "name": "Heading with right text",
-      "utilities": "repel",
       "context": {
+        "utilities": "repel",
         "heading": {
           "isHeader": false,
           "text": "Heading text",

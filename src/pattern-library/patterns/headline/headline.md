@@ -36,6 +36,7 @@ The labelled icon is optional and accepts utility classes plus display text:
 ```json
 {
   "context": {
+    "utilities": "repel",
     "labelledIcon": {
       "utilities": "text-light",
       "text": "Scroll for more"

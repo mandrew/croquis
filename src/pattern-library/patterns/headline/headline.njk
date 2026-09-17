@@ -1,4 +1,4 @@
-<header class="headline repel"{% if data.variant %} data-headline-variant="{{ data.variant }}"{% endif %}>
+<header class="headline {{ data.utilities }}"{% if data.variant %} data-headline-variant="{{ data.variant }}"{% endif %}>
   {% if data.heading.isHeader %}
   <h2 class="{{ data.heading.utilities }}">{{ data.heading.text }}</h2>
   {% else %}
