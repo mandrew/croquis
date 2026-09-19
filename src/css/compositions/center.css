@@ -2,3 +2,12 @@
 CENTER
 More info: https://every-layout.dev/layouts/center/
 */
+
+.center {
+  --measure: 60ch;
+
+  box-sizing: content-box;
+  margin-inline: auto;
+  text-align: center;
+  max-inline-size: var(--measure);
+}

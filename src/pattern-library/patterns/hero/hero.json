@@ -1,11 +1,58 @@
 {
   "title": "Hero",
   "context": {
-    "img": {
-      "src": "/images/hero.jpg",
-      "alt": "Hero content goes here"
+    "styles": "",
+    "heading": {
+      "text": "Build something remarkable",
+      "styles": "mt-zero"
     },
-    "label": "Label",
-    "href": "#"
-  }
+    "img": {
+      "src": "/images/hero.jpg"
+    },
+    "label": "Discover our courses",
+    "href": "#courses"
+  },
+  "variants": [
+    {
+      "name": "Heading with centered intro and description",
+      "context": {
+        "heading": {
+          "text": "Build something remarkable",
+          "level": "1",
+          "styles": "mt-zero"
+        },
+        "intro": {
+          "text": "That will change the way you work.",
+          "styles": "text-step-2"
+        },
+        "description": {
+          "text": "Use this space to explain what you offer, why it matters, or what visitors can do next.",
+          "styles": "text-step-2"
+        },
+        "contentStyles": "wrapper center"
+      }
+    },
+    {
+      "name": "Heading with centered intro and action",
+      "context": {
+        "heading": {
+          "text": "Build something remarkable",
+          "level": "1",
+          "styles": "mt-zero"
+        },
+        "intro": {
+          "text": "That will change the way you work.",
+          "styles": "text-step-2"
+        },
+        "actions": [
+          {
+            "label": "Get started",
+            "url": "/start/",
+            "styles": "primary mt-m-l center"
+          }
+        ],
+        "contentStyles": "wrapper center"
+      }
+    }
+  ]
 }

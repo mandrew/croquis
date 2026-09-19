@@ -1,7 +1,32 @@
-<div class="hero">
-  <img src="{{ data.img.src }}" alt="{{ data.img.alt }}" draggable="false"/>
-  <a href="{{ data.href }}" class="hero__skip-link flow">
-    <span class="hero__skip-link-icon">{# % include "icons/bloom/arrow-down.svg" % #}</span>
-    <span class="hero__skip-link-label">{{ data.label }}</span>
-  </a>
-</div>
+<section class="hero {{ data.styles }}" aria-labelledby="hero-title">
+  <div class="hero__content {{ data.contentStyles }}">
+    {% set heading = data.heading | default({}, true) %}
+    {% set headingLevel = heading.level | default(2, true) %}
+    <h{{ headingLevel }} id="hero-title" class="{{ heading.styles }}">
+      {{ heading.text }}
+    </h{{ headingLevel }}>
+    {% if data.intro %}
+      <p class="{{ data.intro.styles }}">{{ data.intro.text }}</p>
+    {% endif %}
+    {% if data.description %}
+      <p class="{{ data.description.styles }}">{{ data.description.text }}</p>
+    {% endif %}
+    {% if data.actions %}
+        <div class="hero__actions | cluster">
+          {% for action in data.actions %}
+            <a
+              href="{{ action.url }}"
+              class="button {{ action.styles }}"
+              {% if action.external %}rel="noopener noreferrer"{% endif %}
+              {% if action.external %}target="_blank"{% endif %}
+            >
+              {{ action.label }}
+            </a>
+          {% endfor %}
+        </div>
+      {% endif %}
+  </div>
+  {% if data.img %}
+  <img class="hero__image {{ data.img.styles }}" src="{{ data.img.src }}" alt="" draggable="false" aria-hidden="true" />
+  {% endif %}
+</section>

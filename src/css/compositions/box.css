@@ -2,3 +2,8 @@
 BOX
 More info: https://every-layout.dev/layouts/box/
 */
+
+.box {
+  display: block;
+  box-sizing: border-box;
+}
