@@ -5,8 +5,30 @@
   },
   "variants": [
     {
-      "name": "Styled with utilities",
+      "name": "Link",
       "context": {
+        "href": "https://example.com",
+        "text": "Labelled Icon with link"
+      }
+    },
+    {
+      "name": "Arrow pointing down",
+      "context": {
+        "variant": "data-icon-down",
+        "text": "Labelled Icon"
+      }
+    },
+    {
+      "name": "Text and arrow reversed",
+      "context": {
+        "variant": "data-icon-reversed",
+        "text": "Labelled Icon"
+      }
+    },
+    {
+      "name": "Styled labelled icon using utility classes",
+      "context": {
+        "text": "Labelled Icon",
         "utilities": "text-light text-step-2"
       }
     }

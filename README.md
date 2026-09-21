@@ -49,6 +49,8 @@ update extraCSSFiles if you use a new theme
 
 **Todo:**
 - utilities to styles?
+- url to href?
+- variants use data.title so change title to title-name, same as file name
 
 ## Resources
 https://cube.fyi/

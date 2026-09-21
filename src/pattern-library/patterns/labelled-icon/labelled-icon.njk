@@ -1,4 +1,11 @@
-<p class="labelled-icon {{ data.utilities }}">
+{% if data.href %}
+<a href="{{ data.href }}" class="labelled-icon {{ data.utilities }}" {% if data.variant %} {{ data.variant }}{% endif %}>
   {{ data.text }}
-  {% include "icons/bloom/arrow-down.svg" %}
+  {% include "assets/arrow.svg" %}
+</a>
+{% else %}
+<p class="labelled-icon {{ data.utilities }}" {% if data.variant %} {{ data.variant }}{% endif %}>
+  {{ data.text }}
+  {% include "assets/arrow.svg" %}
 </p>
+{% endif %}

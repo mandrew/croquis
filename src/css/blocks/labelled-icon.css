@@ -1,14 +1,31 @@
 /*
 Labelled icon
-*/
-  .labelled-icon {
-    display: flex;
-    align-items: baseline;
-    line-height: var(--leading-fine);
-    gap: 0 var(--space-xs);
-  }
 
-  .labelled-icon svg {
-    height: 1lh;
-    transform: translateY(0.5ex);
-  }
+Consider using CSS custom properties for consistent spacing, font size, and line height across labelled icons.
+*/
+.labelled-icon {
+  --labelled-icon-gap: 0.5ch;
+
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--labelled-icon-gap);
+  line-height: var(--labelled-icon-line-height);
+  padding-block: var(--labelled-icon-padding-block);
+  font-size: var(--labelled-icon-font-size);
+  color: currentColor;
+}
+
+.labelled-icon svg {
+  height: 1lh;
+  transform: translateY(0.5ex);
+}
+
+/* rotate icon when it is on the left */
+.labelled-icon[data-icon-down] svg {
+  transform: rotate(90deg) translate(0.5ex);
+}
+
+/* reverse the order of text and icon */
+.labelled-icon[data-icon-reversed] {
+  flex-direction: row-reverse;
+}
