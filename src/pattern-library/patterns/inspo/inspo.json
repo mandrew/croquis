@@ -1,12 +1,22 @@
 {
   "title": "Inspo",
-  "extraSampleCSS": "body { padding: 0; }",
   "context": {
-    "heading": "Master the craft",
-    "displayHeading": ["Master", "the craft."],
-    "img": {
-      "src": "/images/inspo.jpg",
-      "alt": "Overhead shot of someone pouring frothed milk into a latté cup."
+    "heading": "Inspiration for today",
+    "displayHeading": ["Inspiration", "for today."]
+  },
+  "variants": [
+    {
+      "name": "Default with Image",
+      "context": {
+        "variant": "data-inspo-image",
+        "styles": "region",
+        "heading": "Inspiration for today",
+        "displayHeading": ["Inspiration", "for today."],
+        "img": {
+          "src": "/images/person-coffee.jpg",
+          "alt": "Shot of someone holding a coffee cup."
+        }
+      }
     }
-  }
+  ]
 }
