@@ -1,0 +1,36 @@
+
+{ 
+  "title": "Image",
+  "context": {
+    "src": "/images/person.jpg",
+    "alt": "Person"
+  },
+  "variants": [
+    {
+      "name": "Image with image class",
+      "context": {
+        "style": "image",
+        "src": "/images/person.jpg",
+        "alt": "Person"
+      }
+    },
+    {
+      "name": "Avatar",
+      "context": {
+        "style": "image",
+        "src": "/images/person.jpg",
+        "alt": "Person",
+        "variant": "avatar"
+      }
+    },
+    {
+      "name": "Pinched",
+      "context": {
+        "style": "image",
+        "src": "/images/person.jpg",
+        "alt": "Person",
+        "variant": "pinched"
+      }
+    }
+  ]
+}

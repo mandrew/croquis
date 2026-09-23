@@ -1,0 +1,5 @@
+<div class="grid" role="img" aria-label="{{ data.label }}">
+  {% for item in data.items %}
+    <img loading="lazy" draggable="false" class="image" src="{{ item.src }}" alt="{{ item.alt }}" data-image-variant="{{ item.variant }}" />
+  {% endfor %}
+</div>

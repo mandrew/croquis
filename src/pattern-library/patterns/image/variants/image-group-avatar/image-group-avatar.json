@@ -1,0 +1,24 @@
+
+{ 
+  "title": "Avatar Group",
+  "context": {
+    "label": "Label title goes here",
+    "items": [
+      {
+        "src": "/images/person.jpg",
+        "alt": "Person",
+        "variant": "avatar"
+      },
+      {
+        "src": "/images/person.jpg",
+        "alt": "Person",
+        "variant": "avatar"
+      },
+      {
+        "src": "/images/person.jpg",
+        "alt": "Person",
+        "variant": "avatar"
+      }
+    ]
+  }
+}

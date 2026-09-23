@@ -1,20 +1,23 @@
 
 { 
-  "title": "Avatar/",
+  "title": "Pinched Group",
   "context": {
     "label": "Label title goes here",
     "items": [
       {
         "src": "/images/person.jpg",
-        "alt": "Person"
+        "alt": "Person",
+        "variant": "pinched"
       },
       {
         "src": "/images/person.jpg",
-        "alt": "Person"
+        "alt": "Person",
+        "variant": "pinched"
       },
       {
         "src": "/images/person.jpg",
-        "alt": "Person"
+        "alt": "Person",
+        "variant": "pinched"
       }
     ]
   }
