@@ -1,0 +1,8 @@
+
+{ 
+  "title": "Logo",
+  "context": {
+    "src": "/images/logo.svg",
+    "alt": "logo"
+  }
+}

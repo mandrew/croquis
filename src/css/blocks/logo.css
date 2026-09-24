@@ -1,0 +1,28 @@
+/* Logo wall styles */
+.logo-wall {
+  --logo-wall-radius: 0 1.85rem 0 1.85rem;
+  --logo-wall-border: 1px solid transparent;
+}
+
+.logo-wall li {
+  display: grid;
+  place-items: center;
+  justify-content: center;
+  align-content: center;
+  background: var(--logo-wall-bg);
+  aspect-ratio: 1/0.75;
+  border-radius: var(--logo-wall-radius);
+  border: var(--logo-wall-border);
+}
+
+.logo-wall img {
+  max-width: 50%;
+  object-fit: cover;
+  filter: grayscale(1) contrast(2);
+}
+
+@media (min-width: 1400px) {
+  .logo-wall img {
+    max-width: 60%;
+  }
+}

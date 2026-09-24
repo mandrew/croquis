@@ -1,0 +1,12 @@
+<style>
+  .logo-wall li { 
+    background-color: #666;
+  }
+</style>
+<ul class="logo-wall grid" aria-label="{{ data.label }}" role="list">
+  {% for item in data.items %}
+    <li>
+      <img class="logo" src="{{ item.src }}" alt="{{ item.alt }}"/>
+    </li>
+  {% endfor %}
+</ul>
