@@ -1,0 +1,35 @@
+/*
+ * Brand/Logo block
+ */
+
+.brand {
+  --brand-gutter: var(--space-s-m);
+  display: flex;
+  gap: var(--brand-gutter);
+  text-decoration: none;
+  max-width: 20rem;
+}
+
+.brand svg {
+  width: 120px;
+  height: 46px;
+}
+
+/*
+ * Supporting text within the brand block
+ */
+.brand__supporting-text {
+  display: flex;
+  align-items: center;
+  border-inline-start: 2px solid var(--color-primary);
+  padding-inline-start: var(--brand-gutter);
+  font-size: var(--size-step-0);
+  font-weight: var(--font-bold);
+  color: var(--color-primary);
+  line-height: var(--leading-fine);
+}
+
+.brand[href]:focus-visible .brand__supporting-text,
+.brand[href]:hover .brand__supporting-text {
+  color: var(--color-inclusive);
+}
