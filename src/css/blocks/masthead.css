@@ -8,24 +8,6 @@ Masthead
   grid-template-rows: repeat(4, auto);
 }
 
-/* logo */
-.masthead svg {
-  width: 100%;
-  height: auto;
-}
-
-.masthead__logo-left {
-  grid-row: 1;
-  grid-column: 1;
-  align-self: start;
-}
-
-.masthead__logo-right {
-  grid-row: 1;
-  grid-column: 2;
-  align-self: start;
-}
-
 /* heading and information */
 .masthead__heading {
   grid-row: 2;

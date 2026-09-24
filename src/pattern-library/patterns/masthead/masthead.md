@@ -1,0 +1,1 @@
+Masthead is an optional styled website introduction section. Replaces hero as an option.
