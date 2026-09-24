@@ -1,0 +1,1 @@
+Brand refers to the logo or image at the top of the website
