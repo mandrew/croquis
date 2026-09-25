@@ -1,0 +1,54 @@
+
+{ 
+  "title": "Pagination",
+  "context": {
+    "label": "Primary",
+    "items": [
+      {
+        "url": "#",
+        "current": true
+      },
+      {
+        "url": "#"
+      },
+      {
+        "url": "#"
+      },
+      {
+        "url": "#"
+      },
+      {
+        "url": "#"
+      },
+      {
+        "url": "#"
+      },
+      {
+        "url": "#"
+      },
+      {
+        "url": "#"
+      },
+      {
+        "url": "#"
+      },
+      {
+        "url": "#"
+      },
+      {
+        "url": "#"
+      },
+      {
+        "url": "#"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "name": "Grid Split",
+      "context": {
+        "variant": "grid-split"
+      }
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+/*
+ * Pagination block styles
+ */
+
+.pagination {
+  --gutter: var(--space-xs);
+  --grid-min-item-size: 3.7rem;
+  --focus-color: var(--color-primary);
+
+  display: var(--pagination-display, flex);
+  grid-template-columns: var(--pagination-grid-columns);
+  grid-template-rows: var(--pagination-grid-rows);
+  row-gap: var(--gutter);
+  inline-size: 100%;
+  max-inline-size: 50ch;
+  justify-self: center;
+  align-items: center;
+}
+
+.pagination__list {
+  display: var(--pagination-list-display, flex);
+  grid-template-columns: var(--pagination-list-grid-columns);
+  justify-self: center;
+  justify-content: space-between;
+}
+
+.pagination__item {
+  justify-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  inline-size: 100%;
+  color: var(--color-heading-text);
+  block-size: 44px;
+}
+
+.pagination .pagination__next {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.pagination a {
+  display: block;
+  line-height: var(--leading-flat);
+  font-size: var(--size-step-1);
+  text-decoration: none;
+  text-align: center;
+  color: var(--color-light);
+  padding: 0.7em 0;
+  outline-offset: 2px;
+  min-inline-size: 24px;
+  max-inline-size: 44px;
+}
+
+.pagination a[aria-current="page"] {
+  background: var(--color-primary);
+  font-weight: var(--font-bold);
+}
+
+.pagination a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 0.3ex;
+}
+
+.pagination a[aria-current="page"]:hover {
+  color: var(--color-light);
+}
+
+.pagination .pagination__prev a {
+  justify-self: flex-start;
+  justify-content: flex-start;
+  max-inline-size: none;
+  inline-size: auto;
+}
+
+.pagination .pagination__next a {
+  justify-self: flex-end;
+  justify-content: flex-start;
+  max-inline-size: none;
+  inline-size: auto;
+}
+
+.pagination[grid-split] {
+  --pagination-display: grid;
+  --pagination-grid-columns: repeat(2, 1fr);
+  --pagination-grid-rows: 44px auto;
+}
+.pagination[grid-split] .pagination__list {
+  --pagination-list-display: grid;
+  --cols: 12;
+  --pagination-list-grid-columns: repeat(var(--cols), minmax(24px, 44px));
+  grid-column: 1 / 3;
+  inline-size: 100%;
+}
+.pagination[grid-split] .pagination__prev {
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
+}
+.pagination[grid-split] .pagination__next {
+  grid-column: 2 / 3;
+  grid-row: -2 / -1;
+}

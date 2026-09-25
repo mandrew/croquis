@@ -1,0 +1,15 @@
+<nav aria-label="Pagination" class="pagination"{% if data.variant %} {{ data.variant }}{% endif %}>
+  <div class="pagination__prev">
+    <a href="#" aria-label="Previous page"><&nbspPrevious</a>
+  </div>
+  <ol class="pagination__list" role="list">
+    {% for item in data.items %}
+      <li>
+        <a class="pagination__item" href="#{{ loop.index }}" aria-label="Page {{ loop.index }}"{% if item.current %} aria-current="page"{% endif %}>{{ loop.index }}</a>
+      </li>
+    {% endfor %}
+  </ol>
+  <div class="pagination__next">
+    <a href="#" aria-label="Next page">Next&nbsp></a>
+  </div>
+</nav>
