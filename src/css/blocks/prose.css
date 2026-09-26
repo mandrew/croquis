@@ -1,3 +1,138 @@
-.prose {
+/* Prose block styles */
+.prose h1,
+.prose h2,
+.prose h3 {
+  max-width: 35ch;
+}
+
+.prose h1,
+.prose h2 {
+  overflow-wrap: anywhere;
+}
+
+.prose :is(h1, h2, h3, h4, h5, h6) {
+  text-wrap: balance;
+  max-width: none;
+}
+
+/* Increased spacing for headings with subheadings for better legibility */
+
+:where(.prose:has(h3) > h2:not([class])) {
+  --flow-space: var(--space-2xl);
+}
+
+:where(.prose:has(h4) > h3:not([class])) {
+  --flow-space: var(--space-2xl);
+}
+
+/* Increase legibility by limiting line lengths */
+
+.prose :is(p, li, dl, figcaption) {
+  max-width: 65ch;
+}
+
+.prose p:empty {
+  --flow-space: 0;
+}
+
+.prose blockquote {
+  position: relative;
+  background-color: var(--blockquote-background);
+  padding: var(--blockquote-padding);
+  max-width: 60ch;
+  border: none;
+  border-radius: var(--blockquote-border-radius);
+}
+
+.prose blockquote::before {
+  content: "";
+  position: absolute;
+  background: var(--blockquote-before-background);
+  display: block;
+  inline-size: 3rem;
+  inset: 0;
+  mask-size: cover;
+  transform: translate(-40%, -50%);
+  aspect-ratio: 22 / 16;
+  mask-position: center;
+  mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">\3c !-- Icon from MingCute Icon by MingCute Design - https://github.com/Richard9394/MingCute/blob/main/LICENSE --><g fill="none"><path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path fill="currentColor" d="M8.4 6.2a1 1 0 0 1 1.2 1.6c-1.564 1.173-2.46 2.314-2.973 3.31A3.5 3.5 0 1 1 4 14.558a7.6 7.6 0 0 1 .508-3.614C5.105 9.438 6.272 7.796 8.4 6.2m9 0a1 1 0 0 1 1.2 1.6c-1.564 1.173-2.46 2.314-2.973 3.31A3.5 3.5 0 1 1 13 14.558a7.6 7.6 0 0 1 .508-3.614c.598-1.506 1.764-3.148 3.892-4.744"/></g></svg>');
+}
+
+.prose .unconstrained {
+  max-width: unset !important; /* Override utility class */
+}
+
+.prose blockquote > *:first-child {
+  margin-top: 0;
+}
+
+/* Heading flow for elements that follow them */
+
+.prose :is(h1, h2, h3, h4, h5, h6) + *:not([class]) {
   --flow-space: var(--space-m);
+}
+
+/* Add more space to headings on block start */
+
+:where(.prose * + :where(:is(h1, h2):not([class]))) {
+  --flow-space: var(--space-2xl);
+}
+
+:where(.prose * + :where(:is(h3):not([class]))) {
+  --flow-space: var(--space-xl);
+}
+
+:where(.prose * + :where(:is(h4):not([class]))) {
+  --flow-space: var(--space-l);
+}
+
+:where(.prose * + :where(:is(h5):not([class]))) {
+  --flow-space: var(--space-l);
+}
+
+:where(.prose * + :where(:is(h6):not([class]))) {
+  --flow-space: var(--space-m);
+}
+
+/* Flow for list items */
+
+.prose :is(ul, ol):not([class]) {
+  --flow-space: 1rem;
+}
+
+.prose :is(ul, ol):not([class]) li + li,
+.prose :is(ul, ol):not([class]) li > :is(ol, ul) {
+  margin-block-start: var(--space-xs);
+}
+
+/* Add a subtle stroke to media in case the background blends with the prose container */
+
+.prose :is(img, picture, video, svg[width][height]) {
+  border: 1px solid var(--color-mid);
+}
+
+/* Reset global SVG rules for prose SVGs because they're likely a diagram etc */
+
+.prose svg[width][height] {
+  width: unset;
+  height: unset;
+  max-width: 100%;
+  padding: var(--space-xs);
+}
+
+/* Currently doesn't work, as also catches list items with a link and text nodes
+.prose ul:not(.text-inclusive) li *:only-child:is(a) {
+  max-width: max-content;
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+}
+*/
+
+@media (min-width: 780px) {
+  .prose h1 {
+    overflow-wrap: unset;
+  }
 }
