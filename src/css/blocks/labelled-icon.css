@@ -5,6 +5,7 @@ Consider using CSS custom properties for consistent spacing, font size, and line
 */
 .labelled-icon {
   --labelled-icon-gap: 0.5ch;
+  --labelled-icon-svg-height: 1lh;
 
   display: inline-flex;
   align-items: baseline;
@@ -16,7 +17,7 @@ Consider using CSS custom properties for consistent spacing, font size, and line
 }
 
 .labelled-icon svg {
-  height: 1lh;
+  height: var(--labelled-icon-svg-height);
   transform: translateY(0.5ex);
 }
 
