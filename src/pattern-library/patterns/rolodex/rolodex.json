@@ -5,40 +5,25 @@
     "items": [
       {
         "link": "#",
-        "theme": "light",
-        "heading": {
-          "number": "07",
-          "text": "A step-by-step guide to brewing with Chemex"
-        },
-        "img": {
-          "src": "/images/rolodex-1.jpg",
-          "alt": "Ground coffee being poured into a Chemex from a height"
-        }
+        "text": "First item"
       },
       {
         "link": "#",
-        "theme": "primary",
-        "heading": {
-          "number": "06",
-          "text": "The science of coffee extraction"
-        },
-        "img": {
-          "src": "/images/rolodex-2.jpg",
-          "alt": "Under-shot of an espresso machine, pouring espresso"
-        }
+        "text": "Second item"
       },
       {
         "link": "#",
-        "theme": "dark",
-        "heading": {
-          "number": "05",
-          "text": "A guide to achieving next-level latte art"
-        },
-        "img": {
-          "src": "/images/rolodex-3.jpg",
-          "alt": "A leaf being added to latte foam"
-        }
+        "text": "Third item"
       }
     ]
-  }
+  },
+  "variants": [
+    {
+      "name": "Text animation",
+      "context": {
+        "utilities": "rolodex-hidden-animation",
+        "variant": "rolodex-hidden-animation"
+      }
+    }
+  ]
 }

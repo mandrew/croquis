@@ -1,13 +1,17 @@
-<div class="rolodex">
-  <ol class="rolodex__list flow" role="list">
+<div class="rolodex"{% if data.variant %} {{ data.variant }}{% endif %}>
+  <ol class="rolodex__list {{ data.utilities }}" role="list">
     {% for item in data.items %}
       <li>
-        <a href="{{ item.link }}" class="rolodex__item sidebar" data-rolodex-theme="{{ item.theme }}" data-reversed>
+        <a href="{{ item.link }}" class="rolodex__item sidebar"{% if item.variant %} {{ item.variant }}{% endif %}{% if item.theme %} data-rolodex-theme="{{ item.theme }}"{% endif %}>
+          {% if item.heading %}
           <h3 class="rolodex__heading">
-            <span class="rolodex__number">*{{ item.heading.number }}</span>
+            {% if item.heading.number %}<span class="rolodex__number">*{{ item.heading.number }}</span>{% endif %}
             <span>{{ item.heading.text }}</span>
           </h3>
-          <img src="{{ item.img.src }}" alt="{{ item.img.alt }}"/>
+          {% else %}
+          <p class="mt-zero">{{ item.text }}</p>
+          {% endif %}
+          {% if item.img %}<img src="{{ item.img.src }}" alt="{{ item.img.alt }}"/>{% endif %}
         </a>
       </li>
     {% endfor %}
