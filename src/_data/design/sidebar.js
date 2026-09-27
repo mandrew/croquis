@@ -25,7 +25,7 @@ module.exports = {
           url: '/pattern-library/css-compositions/'
         },
         {
-          text: 'Core utilties',
+          text: 'Core utilities',
           url: '/pattern-library/css-utilities/'
         }
       ]
