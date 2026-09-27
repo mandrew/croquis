@@ -49,6 +49,11 @@ toc:
 
   <h2 tabindex="-1" id="leading">Leading (line height)</h2>
 
+  {% for leading in design.tokens.textLeading %}
+    <p><strong style="line-height: var(--leading-{{ leading.name | slug }})" class="leading-[1]">{{ leading.name }} (value: {{ leading.value }})</strong></p>
+    <p style="line-height: var(--leading-{{ leading.name | slug }})" class="leading-[1]">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+  {% endfor %}
+
   <table>
     <thead>
       <tr>
@@ -72,6 +77,10 @@ toc:
 
   <h2 tabindex="-1" id="weights">Weights</h2>
 
+  {% for weight in design.tokens.textWeights %}
+    <p style="font-weight: var(--font-weight-{{ weight.name | slug }})" class="leading-[1]">{{ weight.name }} (value: {{ weight.value }})</strong></p>
+  {% endfor %}
+
   <table>
     <thead>
       <tr>
@@ -86,7 +95,7 @@ toc:
             <code>{{ weight.name }}</code>
           </td>
           <td>
-            <code>var(--font-{{ weight.name | slug }})</code>
+            <code>var(--font-weight-{{ weight.name | slug }})</code>
           </td>
         </tr>
       {% endfor %}
@@ -94,6 +103,11 @@ toc:
   </table>
 
   <h2 tabindex="-1" id="fonts">Fonts</h2>
+
+  {% for font in design.tokens.fonts %}
+    <p style="font-family: var(--font-{{ font.name | slug }})" class="font-[1] text-step-4">{{ font.name }}</strong></p>
+    <p style="font-family: var(--font-{{ font.name | slug }})" class="font-[1] text-step-1">{{ font.description }}</strong></p>
+  {% endfor %}
 
   <table>
     <thead>
