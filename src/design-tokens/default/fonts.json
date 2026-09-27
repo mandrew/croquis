@@ -6,7 +6,6 @@
       "name": "Base",
       "description": "System fonts for body copy and globally set text.",
       "value": [
-        "Satoshi",
         "Inter",
         "Segoe UI",
         "Roboto",
@@ -17,8 +16,8 @@
     },
     {
       "name": "Mono",
-      "description": "Monospace font for code samples etc",
-      "value": ["DM Mono", "monospace"]
+      "description": "Cousine, falling back to system mono fonts.",
+      "value": ["Cousine", "DM Mono", "monospace"]
     }
   ]
 }
