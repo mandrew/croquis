@@ -1,19 +1,29 @@
-<header class="site-head wrapper">
-  <div class="sidebar">
-    <div class="site-head__brand">
+<header class="site-head {{ data.utilities }}"{% if data.variant %} {{ data.variant }}{% endif %}>
+  <div class="repel site-head__inner">
+    {% if data.brandName %}
+    <div class="brand {{ data.brandUtilities }}">
       <a href="/">
-        Brand Name
+        {% if data.img %}
+        <img src="{{ data.img.src }}" alt="{{ data.img.alt }}"/>
+        {% else %}
+        {{ data.brandName }}
+        {% endif %}
       </a>
+      {% if data.supportText %}
+      <p class="brand__supporting-text mt-zero">{{ data.supportText }}</p>
+      {% endif %}
     </div>
-    <nav aria-label="primary" class="nav">
+    {% endif %}
+    {% if data.items %}
+    <nav aria-label="primary" class="nav {{ data.navUtilities }}">
       <ul class="cluster" role="list">
-        <li>
-          <a href="/about">About</a>
-        </li>
-        <li>
-          <a href="/contact">Contact</a>
-        </li>
+        {% for item in data.items %}
+          <li>
+            <a href="{{ item.href }}" {% if item.current %}aria-current="page"{% endif %}>{{ item.label }}</a>
+          </li>
+        {% endfor %}
       </ul>
     </nav>
+    {% endif %}
   </div>
 </header>

@@ -1,10 +1,10 @@
 {
   "title": "Site Head",
   "context": {
-    "brandName": "Brand Name",
+    "brandName": "Coffee Academy",
     "items": [
       {
-        "label": "Home",
+        "label": "Courses",
         "href": "#"
       },
       {
@@ -16,5 +16,29 @@
         "href": "#"
       }
     ]
-  }
+  },
+  "variants": [
+    {
+      "name": "Support text",
+      "context": {
+        "utilities": "wrapper",
+        "navUtilities": "repel gutter-s-m",
+        "brandUtilities": "site-head__brand text-step-1",
+        "supportText": "Content goes here"
+      }
+    },
+    {
+      "name": "Logo with support text",
+      "context": {
+        "utilities": "wrapper",
+        "navUtilities": "repel gutter-s-m",
+        "brandUtilities": "site-head__brand text-step-1",
+        "supportText": "Content goes here",
+        "img": {
+          "src": "/images/logo.svg",
+          "alt": "Logo text"
+        }
+      }
+    }
+  ]
 }

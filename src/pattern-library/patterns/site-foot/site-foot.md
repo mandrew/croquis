@@ -1,0 +1,1 @@
+Site foot is showing you how blocks appear in the footer of the site. The blocks should already exist as a separate component

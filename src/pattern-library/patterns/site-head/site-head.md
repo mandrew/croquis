@@ -1,0 +1,1 @@
+Site head is showing you how blocks appear in the head of the site. The blocks should already exist as a separate component
