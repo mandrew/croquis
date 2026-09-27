@@ -12,7 +12,7 @@
 
 {% set brandNav %}
 <div class="repel">
-  <p>Pattern Library</p>
+  <p><a href="/pattern-library">{{ env.theme }}</a> Pattern Library</p>
   <p>
     <a href="/">View the website ←</a>
   </p>
@@ -22,9 +22,6 @@
 {% block content %}
   <div class="pattern-library wrapper">
     <header class="pattern-library__header flow">
-      <a href="/pattern-library">
-        Brand name
-      </a>
       {{ brandNav | safe }}
     </header>
     <main class="sidebar">

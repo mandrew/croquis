@@ -47,7 +47,7 @@ body:has(.pattern-library) {
 
 .pattern-library__sidebar h2 {
   --flow-space: var(--space-l);
-  font-size: var(--size-step-6);
+  font-size: var(--size-step-3);
 }
 
 .pattern-library__swatch {
@@ -70,9 +70,7 @@ body:has(.pattern-library) {
 }
 
 .pattern-library__nav {
-  text-transform: uppercase;
-  letter-spacing: var(--uppercase-kerning);
-  font-weight: var(--font-bold);
+  font-weight: var(--font-weight-regular);
   font-size: var(--size-step-0);
 }
 
@@ -81,8 +79,8 @@ body:has(.pattern-library) {
 }
 
 .pattern-library__nav[role='list'] {
-  margin-block-start: var(--space-m);
-  margin-block-end: var(--space-xl);
+  margin-block-start: var(--space-xs);
+  margin-block-end: var(--space-l);
 }
 
 .pattern-library__toc {
@@ -97,11 +95,11 @@ body:has(.pattern-library) {
 }
 
 .pattern-library__nav li + li {
-  margin-block-start: 0.45em;
+  margin-block-start: 0.2em;
 }
 
 .pattern-library__nav [aria-current='page'] {
-  font-weight: var(--font-bold);
+  font-weight: var(--font-weight-bold);
 }
 
 .pattern-library .switcher > * {
@@ -110,4 +108,8 @@ body:has(.pattern-library) {
 
 .pattern-library .prose {
   padding-bottom: var(--space-2xl);
+}
+
+.pattern-library hr {
+  margin-block: var(--space-m);
 }
