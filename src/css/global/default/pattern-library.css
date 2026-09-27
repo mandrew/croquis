@@ -1,6 +1,6 @@
 :root {
   --color-code-text: var(--color-dark);
-  --color-code-background: var(--color-mid);
+  --color-code-background: var(--color-light-shade);
   --color-code-border: var(--color-dark-glare);
 }
 

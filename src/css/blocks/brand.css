@@ -24,7 +24,7 @@
   border-inline-start: 2px solid var(--color-primary);
   padding-inline-start: var(--brand-gutter);
   font-size: var(--size-step-0);
-  font-weight: var(--font-bold);
+  font-weight: var(--font-weight-bold);
   color: var(--color-primary);
   line-height: var(--leading-fine);
 }
